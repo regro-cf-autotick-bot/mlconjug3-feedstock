@@ -21,7 +21,7 @@ requirements:
   host:
     - pip
     - pytest-runner
-    - python
+    - python >=3.6
   run:
     - click >=7.1
     - colorama
@@ -29,7 +29,7 @@ requirements:
     - defusedxml
     - joblib
     - numpy
-    - python
+    - python >=3.6
     - scikit-learn >=0.21.4
     - scipy
 
