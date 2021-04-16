@@ -12,13 +12,13 @@ source:
 
 build:
   number: 1
+  build:
+    noarch: python
   entry_points:
     - mlconjug3=mlconjug3.cli:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    noarch: python
   host:
     - pip
     - pytest-runner
