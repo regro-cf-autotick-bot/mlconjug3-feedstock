@@ -13,14 +13,11 @@ Development: https://github.com/SekouDiaoNlp/mlconjug3
 
 Documentation: https://mlconjug3.readthedocs.io/en/latest/
 
-A Python library to conjugate verbs in French, English, Spanish,
-Italian, Portuguese and Romanian (more soon) using Machine Learning
-techniques.
+A Python library to conjugate verbs in French, English, Spanish, Italian, Portuguese and Romanian (more soon) using Machine Learning techniques.
 
-Any verb in one of the supported language can be conjugated, as the
-module contains a Machine Learning model of how the verbs behave.
-Even completely new or made-up verbs can be successfully conjugated in
-this manner.
+Any verb in one of the supported language can be conjugated, as the module contains a Machine Learning model of how the verbs behave.
+
+Even completely new or made-up verbs can be successfully conjugated in this manner.
 
 The supplied pre-trained models are composed of:
 
@@ -28,17 +25,39 @@ The supplied pre-trained models are composed of:
 -   a feature selector using Linear Support Vector Classification,
 -   a classifier using Stochastic Gradient Descent.
 
-MLConjug3 uses scikit-learn to implement the Machine Learning
-algorithms.
+MLConjug3 uses scikit-learn to implement the Machine Learning algorithms.
 
-Users of the library can use any compatible classifiers from
-scikit-learn to modify and retrain the models.
+Users of the library can use any compatible classifiers from scikit-learn to modify and retrain the models.
 
-The training data for the french model is based on Verbiste.
+The training data for the french model is based on Verbiste https://perso.b2b2c.ca/~sarrazip/dev/verbiste.html .
 
-The training data for English, Spanish, Italian, Portuguese and Romanian
-was generated using unsupervised learning techniques using the French
-model as a model to query during the training.
+The training data for English, Spanish, Italian, Portuguese and Romanian was generated using unsupervised learning techniques using the French model as a model to query during the training.
+
+WARNING
+========
+
+MLCONJUG3 now only supports Python 3.x as Python 2.x has been deprecated in 2020.
+
+Free software: MIT license
+
+Documentation: https://mlconjug3.readthedocs.io.
+
+SUPPORTED LANGUAGES:
+
+-   French
+-   English
+-   Spanish
+-   Italian
+-   Portuguese
+-   Romanian
+
+FEATURES:
+
+-   Easy to use API.
+-   Includes pre-trained models with 99% + accuracy in predicting conjugation class of unknown verbs.
+-   Easily train new models or add new languages.
+-   Easily integrate MLConjug in your own projects.
+-   Can be used as a command line tool.
 
 
 Current build status
