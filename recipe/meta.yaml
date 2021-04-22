@@ -11,7 +11,7 @@ source:
   sha256: 6757bb7b251ed7640e89c602a0c8425e1d52697c36d84f78d34a97dafad0ed78
 
 build:
-  number: 2
+  number: 3
   noarch: python
   entry_points:
     - mlconjug3=mlconjug3.cli:main
