@@ -128,7 +128,7 @@ about:
     # To use mlconjug3 with the default parameters and a pre-trained conjugation model.
     default_conjugator = mlconjug3.Conjugator(language='fr')
 
-    # Verify that the model works
+     # Verify that the model works
     test1 = default_conjugator.conjugate("manger").conjug_info['Indicatif']['Passé Simple']['1p']
     test2 = default_conjugator.conjugate("partir").conjug_info['Indicatif']['Passé Simple']['1p']
     test3 = default_conjugator.conjugate("facebooker").conjug_info['Indicatif']['Passé Simple']['1p']
@@ -183,7 +183,7 @@ about:
     score = len([a == b for a, b in zip(predicted, dataset.test_labels) if a == b]) / len(predicted)
     print('The score of the model is {0}'.format(score))
 
-    # Verify that the model works
+     # Verify that the model works
     test1 = conjugator.conjugate("manger").conjug_info['Indicatif']['Passé Simple']['1p']
     test2 = conjugator.conjugate("partir").conjug_info['Indicatif']['Passé Simple']['1p']
     test3 = conjugator.conjugate("facebooker").conjug_info['Indicatif']['Passé Simple']['1p']
