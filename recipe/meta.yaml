@@ -11,7 +11,7 @@ source:
   sha256: 6757bb7b251ed7640e89c602a0c8425e1d52697c36d84f78d34a97dafad0ed78
 
 build:
-  number: 3
+  number: 4
   noarch: python
   entry_points:
     - mlconjug3=mlconjug3.cli:main
@@ -93,6 +93,31 @@ about:
     -   Easily train new models or add new languages.
     -   Easily integrate MLConjug in your own projects.
     -   Can be used as a command line tool.
+
+    Usage
+    =====
+
+    > **note**
+    >
+    > The default language is French.
+    > :   When called without specifying a language, the library will try to
+    >     conjugate the verb in French.
+    >
+    To use MLConjug3 from the command line:
+
+        $ mlconjug3 manger
+
+        $ mlconjug3 bring -l en
+
+        $ mlconjug3 gallofar --language es
+
+        $ mlconjug3 -o, --output (Path of the filename for storing the conjugation tables.)
+
+        $ mlconjug3 -s, --subject (The subject format type for the conjugated forms). The
+                           values can be 'abbrev' or 'pronoun'. The default value
+                           is 'abbrev'.
+
+        $ mlconjug3 -h Show the help menu
   doc_url: https://mlconjug3.readthedocs.io/en/latest/
   dev_url: https://github.com/SekouDiaoNlp/mlconjug3
 
