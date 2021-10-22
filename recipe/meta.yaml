@@ -1,5 +1,5 @@
 {% set name = "mlconjug3" %}
-{% set version = "3.7.21" %}
+{% set version = "3.7.22" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mlconjug3-{{ version }}.tar.gz
-  sha256: d051048915485261bb3c6e552dac815b1f3c794bab3f54d30e86f1a3539ca7b4
+  sha256: 4768e70f94ba87dc8f1946a17eeb38b052854c5268fdd09c8257c60cab7a078c
 
 build:
   number: 0
@@ -30,7 +30,7 @@ requirements:
     - joblib
     - numpy
     - python >=3.7
-    - scikit-learn ==1.0
+    - scikit-learn >=1.0
     - scipy
 
 test:
