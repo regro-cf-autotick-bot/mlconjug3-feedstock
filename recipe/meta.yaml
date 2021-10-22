@@ -32,6 +32,7 @@ requirements:
     - python >=3.7
     - scikit-learn >=1.0
     - scipy
+    - progressbar2
 
 test:
   imports:
