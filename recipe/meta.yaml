@@ -1,5 +1,5 @@
 {% set name = "mlconjug3" %}
-{% set version = "3.8.1" %}
+{% set version = "3.8.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mlconjug3-{{ version }}.tar.gz
-  sha256: bed22e3b3a3850d04e7f690f5110fc0e11bdbee5a8a0d0b3193d953b3985d05c
+  sha256: c7ada671b9b8b272ff0c6a755bea4f9b3683cb487486fa8955b86f33a958cda3
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - python >=3.7
     - scikit-learn >=1.0.1
     - scipy
-    - progressbar2 ==3.55.0
+    - progressbar2 ==3.53.1
 
 test:
   imports:
