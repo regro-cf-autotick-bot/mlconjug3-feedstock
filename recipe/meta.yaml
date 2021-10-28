@@ -22,6 +22,7 @@ requirements:
     - pip
     - pytest-runner
     - python >=3.7
+    - poetry
   run:
     - click >=8.0.3
     - colorama
@@ -42,6 +43,7 @@ test:
     - mlconjug3 --help
   requires:
     - pip
+    - poetry
 
 about:
   home: https://github.com/SekouDiaoNlp/mlconjug3
