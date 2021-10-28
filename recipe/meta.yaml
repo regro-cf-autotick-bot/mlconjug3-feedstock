@@ -1,5 +1,5 @@
 {% set name = "mlconjug3" %}
-{% set version = "3.7.22" %}
+{% set version = "3.8.2" %}
 
 
 package:
@@ -8,20 +8,21 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mlconjug3-{{ version }}.tar.gz
-  sha256: 4768e70f94ba87dc8f1946a17eeb38b052854c5268fdd09c8257c60cab7a078c
+  sha256: c7ada671b9b8b272ff0c6a755bea4f9b3683cb487486fa8955b86f33a958cda3
 
 build:
   number: 0
   noarch: python
   entry_points:
     - mlconjug3=mlconjug3.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --use-deprecated=out-of-tree-build
 
 requirements:
   host:
     - pip
     - pytest-runner
     - python >=3.7
+    - poetry
   run:
     - click >=8.0.3
     - colorama
@@ -30,9 +31,9 @@ requirements:
     - joblib
     - numpy
     - python >=3.7
-    - scikit-learn >=1.0
+    - scikit-learn >=1.0.1
     - scipy
-    - progressbar2
+    - progressbar2 ==3.53.1
 
 test:
   imports:
@@ -42,6 +43,7 @@ test:
     - mlconjug3 --help
   requires:
     - pip
+    - poetry
 
 about:
   home: https://github.com/SekouDiaoNlp/mlconjug3
