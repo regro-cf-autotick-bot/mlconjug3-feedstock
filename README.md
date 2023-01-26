@@ -5,7 +5,7 @@ Home: https://github.com/SekouDiaoNlp/mlconjug3
 
 Package license: MIT
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mlconjug3-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mlconjug3-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Python library to conjugate French, English, Spanish, Italian, Portuguese and Romanian verbs using Machine Learning techniques.
 
@@ -13,30 +13,13 @@ Development: https://github.com/SekouDiaoNlp/mlconjug3
 
 Documentation: https://mlconjug3.readthedocs.io/en/latest/
 
-A Python library to conjugate verbs in French, English, Spanish, Italian, Portuguese and Romanian (more soon) using Machine Learning techniques.
+A Command Line application and Python library to conjugate verbs in French, English, Spanish, Italian, Portuguese and Romanian (more soon) using Machine Learning techniques.
 
-Any verb in one of the supported language can be conjugated, as the module contains a Machine Learning model of how the verbs behave.
+Conjugate any verb in one of the supported languages, even completely new or made-up verbs, with the help of a pre-trained Machine Learning model.
+The pre-trained models are composed of a binary feature extractor, a feature selector using Linear Support Vector Classification, and a classifier using Stochastic Gradient Descent.
+Easily modify and retrain the models using any compatible classifiers from scikit-learn.
+Uses Verbiste as the training data for the French model, and unsupervised learning techniques to generate the data for the English, Spanish, Italian, Portuguese and Romanian models.
 
-Even completely new or made-up verbs can be successfully conjugated in this manner.
-
-The supplied pre-trained models are composed of:
-
--   a binary feature extractor,
--   a feature selector using Linear Support Vector Classification,
--   a classifier using Stochastic Gradient Descent.
-
-MLConjug3 uses scikit-learn to implement the Machine Learning algorithms.
-
-Users of the library can use any compatible classifiers from scikit-learn to modify and retrain the models.
-
-The training data for the french model is based on Verbiste https://perso.b2b2c.ca/~sarrazip/dev/verbiste.html .
-
-The training data for English, Spanish, Italian, Portuguese and Romanian was generated using unsupervised learning techniques using the French model as a model to query during the training.
-
-WARNING
-========
-
-MLCONJUG3 now only supports Python 3.x as Python 2.x has been deprecated in 2020.
 
 Free software: MIT license
 
@@ -53,11 +36,21 @@ SUPPORTED LANGUAGES:
 
 FEATURES:
 
--   Easy to use API.
+-   Command Line Interface tool.
+-   Easy to use and intuitive API.
 -   Includes pre-trained models with 99% + accuracy in predicting conjugation class of unknown verbs.
 -   Easily train new models or add new languages.
--   Easily integrate MLConjug in your own projects.
--   Can be used as a command line tool.
+-   Uses caching and multiprocessing for maximum performance.
+-   Easily integrate mlconjug3 in your own projects.
+-   Extensive documentation.
+-   Powerful machine learning algorithms for accurate verb conjugation predictions.
+-   Support for multiple languages including English, Spanish, French, and German.
+-   Customizable settings to fine-tune performance and adapt to different use cases.
+-   Robust error handling and troubleshooting capabilities.
+-   Regular updates and improvements to ensure optimal performance.
+-   Community support and contributions to continuously expand the library’s capabilities.
+-   Integration with popular libraries such as scikit-learn and numpy for machine learning tasks.
+
 
 Usage
 =====
@@ -91,8 +84,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12459&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlconjug3-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12459&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlconjug3-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -115,16 +108,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `mlconjug3` can be installed with:
+Once the `conda-forge` channel has been enabled, `mlconjug3` can be installed with `conda`:
 
 ```
 conda install mlconjug3
 ```
 
-It is possible to list all of the versions of `mlconjug3` available on your platform with:
+or with `mamba`:
+
+```
+mamba install mlconjug3
+```
+
+It is possible to list all of the versions of `mlconjug3` available on your platform with `conda`:
 
 ```
 conda search mlconjug3 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search mlconjug3 --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search mlconjug3 --channel conda-forge
+
+# List packages depending on `mlconjug3`:
+mamba repoquery whoneeds mlconjug3 --channel conda-forge
+
+# List dependencies of `mlconjug3`:
+mamba repoquery depends mlconjug3 --channel conda-forge
 ```
 
 
@@ -142,10 +160,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
