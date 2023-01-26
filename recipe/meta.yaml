@@ -1,5 +1,5 @@
 {% set name = "mlconjug3" %}
-{% set version = "3.8.3" %}
+{% set version = "3.9.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mlconjug3-{{ version }}.tar.gz
-  sha256: 65b7c37fff9be9b0139323a3feed8a02840cb10a1348ab2e5ad3c5679005125d
+  sha256: 2b37b86bb450ba1fc17db392b6f34c5b3683a17adb8f7b6e84dc71c75c7d4405
 
 build:
   number: 0
@@ -50,7 +50,7 @@ about:
   summary: A Python library to conjugate French, English, Spanish, Italian, Portuguese and Romanian verbs using Machine Learning techniques.
   license: MIT
   license_file: LICENSE
-  description: |+
+  description: |
     A Python library to conjugate verbs in French, English, Spanish, Italian, Portuguese and Romanian (more soon) using Machine Learning techniques.
 
     Any verb in one of the supported language can be conjugated, as the module contains a Machine Learning model of how the verbs behave.
