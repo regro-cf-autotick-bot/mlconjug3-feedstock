@@ -31,7 +31,7 @@ requirements:
     - joblib
     - numpy
     - python >=3.8
-    - scikit-learn >=1.2.0
+    - scikit-learn >=1.2.1
     - scipy
     - rich
     - pyyaml
