@@ -15,7 +15,7 @@ build:
   noarch: python
   entry_points:
     - mlconjug3=mlconjug3.cli:main
-  script: {{ PYTHON }} -m pip install . -vv --use-deprecated=out-of-tree-build
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
