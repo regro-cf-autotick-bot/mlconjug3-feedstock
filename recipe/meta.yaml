@@ -33,9 +33,6 @@ requirements:
     - rich
     - pyyaml
     - tomlkit
-    - colorama
-    - hydra-core
-    - cython
 
 test:
   imports:
