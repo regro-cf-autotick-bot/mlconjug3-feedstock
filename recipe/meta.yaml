@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mlconjug3-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mlconjug3-{{ version }}.tar.gz
   sha256: 04a5f604b69a0f3026bc6e0460e85f90f4fcfffb9a00dc3e046898c5bfafd906
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - mlconjug3=mlconjug3.cli:main
@@ -21,14 +21,14 @@ requirements:
   host:
     - pip
     - pytest-runner
-    - python >=3.8
+    - python {{ python_min }}
     - poetry
   run:
     - click >=8.1.3
     - defusedxml
     - joblib
     - numpy
-    - python >=3.8
+    - python >={{ python_min }}
     - scikit-learn ==1.3.0
     - rich <13.3
     - pyyaml
@@ -43,6 +43,7 @@ test:
   requires:
     - pip
     - poetry
+    - python {{ python_min }}
 
 about:
   home: https://github.com/SekouDiaoNlp/mlconjug3
